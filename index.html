@@ -4,27 +4,73 @@
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <meta http-equiv="X-UA=Compatible" content="ie=edge">
-        <title>Challenge Quiz</title>
-        <link rel="stylesheet" href="./css/style.css">
+        <title>Javascript Code Quiz | Home</title>
+        <link rel="stylesheet" href="./assets/css/style.css">
     </head>
 
     <body>
         
         <div class="header-bar">
             <div id="header-bar-info">
-                <button class="hs-button" id="high-scores-button">High Scores</button>
+                
                 <p>Timer: 00</p>
             </div>
         </div>
 
-
-        <div id="intro-page" class="big-long-words">
+        
+        <div id="intro-page" class="text">
             <header class="intro-padding">
-                <h1 class="page-title">Challenge Quiz</h1>
-                <p><span class= "bold">Try to answer these coding questions within the time limit given. You will have 100 seconds to answer all of the questions.</span></p>
-                <p><span class= "bold">Incorrect answers will penalize your score/time with 10 seconds.</span></p>
-                <button class="start-button" id="start-quiz">Start Quiz</button>
+                <h1 class="page-title">Javascript Quiz Challenge</h1>
+                <p>Try to answer the quiz questions within the time limit given. You will have 60 seconds to answer all of the questions</p>
+                <p>Incorrect answers will penalize you score/time with 10 seconds.</p>
+                <button class="quiz-start" id="start-quiz">Start Quiz!</button>
             </header>
         </div>
+
+        <main>
+        
+        <section id="question-screen" class="quiz-begin">
+            
+            <h2>Question here</h2>
+            <ul>
+                <li><button>Answer 1</button></li>
+                <li><button>Answer 2</button></li>
+                <li><button>Answer 3</button></li>
+                <li><button>Answer 4</button></li>
+            </ul>
+            <footer>
+                <p></p>
+            </footer>
+        </section>
+
+        
+
+        <section class="end-screen">
+            <h2>Congrats the quiz is completed!</h2>
+            <p>Your score: 00</p>
+
+            <div>
+                <label for="">Enter first name:</label>
+                <input type="text">
+                <button id="submit-button">Submit</button>
+            </div>
+
+        </section>
+
+        
+
+        <section id="high-scores" class="high-scores-screen">
+            <h2>High Scores:</h2>
+            <ol>
+                <li>score</li>
+                <li>score</li>
+                <li>score</li>
+                <li>score</li> 
+            </ol>
+        </section>
+       </main>
+
+        
+        <script src="./assets/js/script.js"></script>
     </body>
 </html>

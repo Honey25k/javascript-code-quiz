@@ -1,0 +1,111 @@
+body {
+    margin: 0;
+    padding: 0;
+    background-image: url(/assets/images/quizzz.jpg);
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+}
+
+header h1 {
+    color: black;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    margin: 0 auto;
+    text-align: center;
+    padding: 25px;
+}
+
+.header-bar {
+    padding: 20px 20px 20px 20px;
+}
+
+.header-bar div {
+    display: flexbox;
+    justify-content: space-between;
+}
+
+.header-bar p {
+    font-weight: bold;
+    border: solid black ;
+    padding: 20px;
+    text-align: center;
+}
+
+.text h1, p {
+    padding: 50px;
+}
+
+.text p {
+    padding: 50px;
+    font-size: 1.5em;
+    text-align: center;
+    font-family:Arial, Helvetica, sans-serif;
+}
+
+.quiz-start {
+    font-weight: bold;
+    border: solid black ;
+    text-align: center;
+    padding: 30px;
+    display: block;
+    margin: 0 auto;
+}
+
+.quiz-begin {
+    display: none;
+    padding: 50px;
+    border: solid black;
+}
+
+button {
+    padding: 10px 24px;
+    border-radius: 10px;
+    background: radial-gradient(circle, rgb(155, 214, 241) 0%, rgba(241, 125, 183, 0.604) 100%);
+}
+
+.end-screen {
+    display: none;
+}
+
+.high-scores-screen {
+    display: none;
+}
+
+.high-scores-screen h2 {
+    color: black;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    margin: 0 auto;
+    text-align: center;
+    padding: 25px;
+}
+
+.end-screen h2 {
+    color: black;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    margin: 0 auto;
+    text-align: center;
+    padding: 25px;
+}
+
+.end-screen p {
+    color: black;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    margin: 0 auto;
+    text-align: center;
+    padding: 25px;
+}
+
+.end-screen div {
+    color: black;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    margin: 0 auto;
+    text-align: center;
+    padding: 25px;
+}
+
+.high-scores-screen li {
+    padding: 50px;
+    font-size: 1.5em;
+    text-align: center;
+    font-family:Arial, Helvetica, sans-serif;
+}
