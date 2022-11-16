@@ -54,6 +54,12 @@ let listOfQuestions = [
         choices: ["JavaScript is an Object-Based language", "JavaScript is Assembly-language", "JavaScript is a High-level language", "JavaScript is an Object-Oriented language"],
         rightAnswer: "JavaScript is an Object-Oriented language"
     },
+
+    {
+        title: "How do you declare a JavaScript variable x?",
+        choices: ["define x;", "variable x;", "var x;", "def x;"],
+        rightAnswer: "var x;"
+    },
 ]
 
 // function to switch screens from start quiz page. 
