@@ -1,4 +1,4 @@
-  
+// global variables to get elements we need. 
 var  introQuiz = document.getElementById("intro-page");
 var  startQuizButton = document.getElementById("start-quiz");
 var  submitButton = document.getElementById("submit-button");
@@ -9,14 +9,17 @@ var  answerOptionContainer = document.querySelector("#question-screen ul");
 var  scoresScreen = document.getElementById("high-scores");
 var  firstNameTextBox = quizLastScreen.querySelector("input");
 
+// variables for the different screen/pages 
 var currentPage = introQuiz;
 var previousPage = introQuiz;
- 
-var timeLeft = 60; 
+
+// variables for questions and time  
+var timeLeft = 60;
 var currentQuestionNumber = 0; 
 var finalUserScore; 
-var timerSystem; 
+var timerSystem;
 
+// questions for quiz
 let listOfQuestions = [
     {
         title: "JavaScript File Has An Extension of:",
@@ -53,40 +56,45 @@ let listOfQuestions = [
     },
 ]
 
+// function to switch screens from start quiz page. 
+// style.display: (display property sets or returns the element's display type)  
 function changeToScreen(screen) {
-    screen.style.display = "block"; 
+    screen.style.display = "block";     
     currentPage.style.display = "none"; 
-    previousPage = currentPage; 
+    previousPage = currentPage;  
     currentPage = screen; 
 }
 
+// timer update with text "time left" 
 function updateTimerText() {
     timerLabel.textContent = "Time Left: " + timeLeft;
 }
 
+// function for clearing elements 
 function clearElements(element) {
     const children = element.children;
     for (let i = children.length - 1; i >= 0; i--) {
         children[i].remove();
     }
 }
-
+// function ends quiz when there is no question + get element to use for next question data from list of questions    
 function initiateNextQuestion() {
-
+     
     if (currentQuestionNumber >= listOfQuestions.length) {
         whenQuizFinish();
         return;
     }
-
+    
     const questionTitleLabel = document.querySelector("#question-screen h2");
-
+     
     const currentQuestion = listOfQuestions[currentQuestionNumber];
     const questionChoices = currentQuestion.choices;
- 
+   
     questionTitleLabel.textContent = currentQuestion.title;
-
+  
     clearElements(answerOptionContainer);
 
+    // for loop: generates next question answer options and new list of question choices.   
     for (let i = 0; i < questionChoices.length; i++) {
         
         let currentChoice = questionChoices[i];
@@ -99,12 +107,12 @@ function initiateNextQuestion() {
         li.appendChild(button);
         answerOptionContainer.appendChild(li);
     }
-
+    // get next question to the list 
     currentQuestionNumber++;
 }
-
-function whenQuizFinish() {
-    
+// shows us last screen with your score and the time left after you finish quiz.
+// clearInterval also stops the timer. 
+function whenQuizFinish() { 
     changeToScreen(quizLastScreen);
 
     const scoreTitle = quizLastScreen.querySelector("p");
@@ -114,11 +122,11 @@ function whenQuizFinish() {
     clearInterval(timerCounter);
 
 }
-
+// when starting quiz, change to questions/answer screen and start timer (in milliseconds) 
 function startQuiz() {
     
     changeToScreen(questionsPage);
-
+    // timer countdown 
     timerCounter = setInterval(function() {
         timeLeft--;
         if (timeLeft <= 0) {
@@ -128,14 +136,14 @@ function startQuiz() {
         }
         updateTimerText();
     }, 1000);
-
+     
     initiateNextQuestion();
 }
-
+// change to high score page 
 function highScores() {
     changeToScreen(scoresScreen);
 }
-
+// view high scores and get localstorage highscore data    
 function viewHighScores() {
     let highScoresContainer = scoresScreen.querySelector("ol");
 
@@ -157,7 +165,8 @@ function viewHighScores() {
     }
 
 }
-
+// add first name for submit box to get your score. 
+  
 function whenSubmitClick() {
     if (!firstNameTextBox.value) {
         return;
@@ -183,7 +192,8 @@ function whenSubmitClick() {
     viewHighScores();
 }
 
-
+// when answer option is clicked generate text of your correct or wrong. 
+// when answer is wrong we penalize uzer with -10 seconds time left.      
 function answerOptionClicked(event) {
 
     let buttonSelected = event.target;
@@ -204,7 +214,7 @@ function answerOptionClicked(event) {
         initiateNextQuestion();
     }
 }
-
+// event listeners for "start quiz" button, "submit" button and answer options buttons.  
 startQuizButton.addEventListener("click", startQuiz);
 submitButton.addEventListener("click", whenSubmitClick);
 answerOptionContainer.addEventListener("click", answerOptionClicked)
