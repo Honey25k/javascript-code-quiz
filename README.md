@@ -10,4 +10,6 @@ There is 6 questions in total to answer and for every incorrect answer, 10 secon
 
 ## Link to finished project: 
 
+https://honey25k.github.io/javascript-code-quiz/ 
+
 
